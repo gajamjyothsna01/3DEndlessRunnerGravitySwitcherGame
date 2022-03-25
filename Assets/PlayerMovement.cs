@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public float playerJumpforce;
@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     int score;
     public int speedToIncrease;
+    int increaseTheSpeedAfterSomeDistance = 10;
+    public Text scoreText, textScore;
+   
    
   //  bool isGrounded = false;
     // Start is called before the first frame update
@@ -29,12 +32,14 @@ public class PlayerMovement : MonoBehaviour
             Physics.gravity *= -1;
         }
         score = Mathf.FloorToInt(transform.position.x); //Getting the larger int value from float through the player position.
-        Debug.Log(score);
+        //Debug.Log(score);
+       
+        scoreText.text = score.ToString();
         //Increase the PlayerSpeed after some Distance
         if(score == speedToIncrease)
         {
             playerSpeed = playerSpeed + 2;
-            speedToIncrease = speedToIncrease + 10;
+            speedToIncrease = speedToIncrease + increaseTheSpeedAfterSomeDistance;
         }
         
         /*
