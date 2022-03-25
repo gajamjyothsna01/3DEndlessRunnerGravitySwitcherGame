@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     Rigidbody rb;
     int score;
-   
+    public int speedToIncrease;
    
   //  bool isGrounded = false;
     // Start is called before the first frame update
@@ -28,14 +28,22 @@ public class PlayerMovement : MonoBehaviour
             //Access the Gravity
             Physics.gravity *= -1;
         }
-        score = Mathf.FloorToInt(transform.position.x);
+        score = Mathf.FloorToInt(transform.position.x); //Getting the larger int value from float through the player position.
         Debug.Log(score);
+        //Increase the PlayerSpeed after some Distance
+        if(score == speedToIncrease)
+        {
+            playerSpeed = playerSpeed + 2;
+            speedToIncrease = speedToIncrease + 10;
+        }
+        
+        /*
         if(score > 10)
         {
             //  rb.velocity = new Vector3(rb.position.x * playerSpeed, rb.position.y , rb.position.z);
             //Speed up the movement of the player
             playerSpeed = playerSpeed * 2;
-        }
+        }*/
 
 
         

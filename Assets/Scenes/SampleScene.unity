@@ -408,8 +408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e78e564403149c44a712e587e197c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerJumpforce: 300
+  playerJumpforce: 3
   playerSpeed: 1
+  speedToIncrease: 10
 --- !u!54 &1084461832
 Rigidbody:
   m_ObjectHideFlags: 0
