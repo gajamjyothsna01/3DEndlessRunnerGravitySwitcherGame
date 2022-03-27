@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         //Increase the PlayerSpeed after some Distance
         if(score == speedToIncrease)
         {
-            playerSpeed = playerSpeed + 2;
+            playerSpeed = playerSpeed + 0.5f;
             speedToIncrease = speedToIncrease + increaseTheSpeedAfterSomeDistance;
         }
         
