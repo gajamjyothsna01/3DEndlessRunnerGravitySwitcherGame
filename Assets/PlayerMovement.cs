@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public int speedToIncrease;
     int increaseTheSpeedAfterSomeDistance = 10;
     public Text scoreText, textScore;
+    public GameObject youWinImage;
    
    
   //  bool isGrounded = false;
@@ -35,7 +36,11 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(score);
        
         scoreText.text = score.ToString();
-        //Increase the PlayerSpeed after some Distance
+        //Increase the PlayerSpeed after some Distance\
+        if(score > 100)
+        {
+            youWinImage.SetActive(true);
+        }
         if(score == speedToIncrease)
         {
             playerSpeed = playerSpeed + 0.5f;
