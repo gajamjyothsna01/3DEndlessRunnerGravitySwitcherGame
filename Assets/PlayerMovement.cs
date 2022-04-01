@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
+        PlayerPrefs.SetString("Name", "Happy");
+        Debug.Log(PlayerPrefs.GetString("Name"));
+
     }
 
     // Update is called once per frame
@@ -36,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(score);
        
         scoreText.text = score.ToString();
+        Debug.Log(score);
+        Debug.Log(PlayerPrefs.GetInt("Score"));
+        
+        PlayerPrefs.SetInt("Score", score);   //Saving the dATA.
+        
         //Increase the PlayerSpeed after some Distance\
         if(score > 100)
         {
